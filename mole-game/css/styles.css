@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+    font-family:"Muli",sans-serif;
+    background-image:url("../images/backgroundimage.jpg");
+    background-repeat:no-repeat;
+    background-size:cover;
+    cursor: url(../images/cursor.png),default;
+    color:#ffbe9c;
+    font-weight:bolder;
+}
+.mole-heading{
+ font-size:50px;
+ color:#ffbe9c;
+ font-weight:bold;
+ text-align:center;
+}
+.worm-meter{
+    width:100%;
+    text-align:center;
+}
+.feed-holes{
+    display:flex;
+        flex-flow:row wrap;
+        justify-content:center;
+        align-items:center;
+        margin-top:1.5rem;
+}
+.hole-container{
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+.hole{
+    background: black;
+        border-radius: 50%;
+        overflow: visible;
+        width: 267px;
+        height: 267px;
+        position:relative;
+}
+.img {
+    position: relative;
+    right:35px;
+   
+}
+.win{
+    max-width: 100vw;
+        max-height: 100vh;
+    display:none;
+}
+.hide{
+    display:none;
+}
+.show{
+    display:block;
+}
+.hole .mole {
+    
+    position: absolute;
+right:-14%;    
+    animation: rise .3s ease-out;
+}
