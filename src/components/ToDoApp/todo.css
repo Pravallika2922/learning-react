@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Recursive&display=swap');
+
+.todo_view{
+    background-color: #EDC7B7;
+    margin-top:100px;
+    text-align:center;
+    line-height:20px;
+}
+.todo_section{
+    margin-bottom:20px;
+}
+.todo_heading{
+    font-weight:800!important;
+    font-size:20px !important;
+    margin-bottom:10px;
+}
+.todo_input{
+color: #ae7293;
+background:transparent;
+margin-top:10px;
+}
+.todo_btn{
+    margin-right:30px!important; 
+    margin-left:30px !important;
+    height:1.4375em!important;
+    width:fit-content!important;
+    color:#ae7293!important;
+}
+.todo_list{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-evenly;
+    align-items:flex-start;
+}
+.todo_unordered{
+    list-style-type:circle;
+    
+}
+.todo_unordered li{
+    border-bottom: 1px solid #ae7293;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:space-evenly;
+}
+
+.todo_strike{
+    text-decoration:line-through;
+
+}
