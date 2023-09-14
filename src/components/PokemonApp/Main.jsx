@@ -44,9 +44,10 @@ const Main = () => {
           pokemon={pokeData}
           infoPokemon={(poke) => setPokeDes(poke)}
         />
-        <div className="btn-grp">
+        {!loading  ? ( <div className="btn-grp">
           {nextUrl && (
             <button
+            class="standardBtn"
               onClick={() => {
                 setPokeData([]);
                 setUrl(nextUrl);
@@ -57,6 +58,7 @@ const Main = () => {
           )}
           {prevUrl && (
             <button
+            class="standardBtn"
               onClick={() => {
                 setPokeData([]);
                 setUrl(prevUrl);
@@ -65,7 +67,8 @@ const Main = () => {
               Previous
             </button>
           )}
-        </div>
+        </div>):null}
+       
       </div>
       <div className="right-content">
         <PokeInfo data={pokeDes} />

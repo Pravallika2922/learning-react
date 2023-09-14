@@ -5,3 +5,35 @@
   margin: 0;
   padding: 0;
 }
+.primary-nav {
+  background-color:gray;
+  font-size: 20px;
+  font-weight: bold;
+ padding:5px;
+width:100%;
+color:white;
+display:flex;
+}
+
+.primary-nav a {
+  margin-right: 20px;
+  text-decoration: none;
+  color:white;
+  flex:auto;
+  text-align:center;
+}
+
+.primary-nav a:hover {
+  background:rgb(70, 69, 69);
+  color:chocolate;
+  text-decoration: underline;
+}
+
+@media all and (max-width:400px){
+  .primary-nav{
+    flex-direction:column;
+  }
+  .primary-nav a{
+    text-align:center;
+  }
+}

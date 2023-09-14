@@ -14,15 +14,16 @@ const Items = (item) => {
     <div className="todo_list">
       <ul className="todo_unordered">
         <li key={item.id} className={item.isDone ? "todo_strike" : ""}>
-          {item.name}
+          <div className="li_text">{item.name}</div>
           <IconButton
             aria-label="check"
             onClick={() => dispatch(doneToDo(item.id))}
             disabled={item.isDone == true}
+            
           >
             <CheckIcon />
           </IconButton>
-          <IconButton aria-label="delete" onClick={handleDelete}>
+          <IconButton aria-label="delete" onClick={handleDelete} >
             <DeleteIcon />
           </IconButton>
         </li>

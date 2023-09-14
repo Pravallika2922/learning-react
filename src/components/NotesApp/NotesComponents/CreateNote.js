@@ -12,7 +12,7 @@ function CreateNote({
 }) {
   return (
     <div className="create_note">
-      <TextField
+      <TextField 
         type="text"
         variant="outlined"
         placeholder="Enter Title"
@@ -20,6 +20,7 @@ function CreateNote({
         onChange={titleHandler}
         value={title}
         sx={{ mb: "10px" }}
+        required
       />
       <TextField
         type="text"

@@ -7,13 +7,13 @@ const Weather = ({ weatherData }) => {
     <div className="weather_main">
       <div className="weather_header">{weatherData.name}</div>
       <div className="flex">
-        <p className="day">Day:{moment().format("dddd")}</p>
-        <p className="day">Date:{moment().format("LL")}</p>
-        <p className="day">Description:{weatherData.weather[0].description}</p>
+        <p className="day">Day: {moment().format("dddd")}</p>
+        <p className="day">Date: {moment().format("LL")}</p>
+        <p className="day">Description: {weatherData.weather[0].description}</p>
       </div>
       <div className="flex">
-        <p className="temp">Temperature:{weatherData.main.temp}</p>
-        <p className="temp">Humidity:{weatherData.main.humidity}</p>
+        <p className="temp">Temperature: {weatherData.main.temp}</p>
+        <p className="temp">Humidity: {weatherData.main.humidity}</p>
       </div>
 
       <div className="flex">

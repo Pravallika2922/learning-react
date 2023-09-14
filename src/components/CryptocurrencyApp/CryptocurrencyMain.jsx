@@ -20,7 +20,7 @@ const CryptocurrencyMain = () => {
   }, []);
 
   return (
-    <div>
+    <>
       <input
         type="text"
         placeholder="type the coin..."
@@ -29,7 +29,7 @@ const CryptocurrencyMain = () => {
         className="coins_search"
       />
       {coins ? <Coins coinsList={coins} searchInput={input} /> : <div></div>}
-    </div>
+      </>
   );
 };
 

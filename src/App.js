@@ -9,6 +9,7 @@ import PwdGenerator from "./components/PasswordGenratorApp/PwdGenerator";
 import TodoMain from "./components/ToDoApp/TodoMain";
 import QuizMain from "./components/QuizApp/QuizMain";
 import ScreenshotMain from "./components/ScreenshotApp/ScreenShotMain";
+import ShoppingCart from "./components/ShoppingCart/Shopping_Main"
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="todo" element={<TodoMain />} />
         <Route path="quiz" element={<QuizMain />} />
         <Route path="screenshot" element={<ScreenshotMain />} />
+        <Route path="Shopping" element={<ShoppingCart/>}/>
       </Routes>
     </>
   );

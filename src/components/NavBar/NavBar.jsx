@@ -13,6 +13,7 @@ const NavBar = () => {
       <NavLink to="todo">ToDo</NavLink>
       <NavLink to="quiz">Quiz</NavLink>
       <NavLink to="screenshot">ScreenShot</NavLink>
+      <NavLink to="shopping">Shopping</NavLink>
     </nav>
   );
 };

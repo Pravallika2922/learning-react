@@ -9,6 +9,7 @@ import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import { v4 as uuid } from "uuid";
 import DialogTitle from "@mui/material/DialogTitle";
+import Popup from "./Popup";
 
 function NotesMain() {
   const [open, setOpen] = useState(false);
@@ -16,20 +17,28 @@ function NotesMain() {
   const [noteTitle, setNoteTitle] = useState("");
   const [noteBody, setNoteBody] = useState("");
   const [message, setMessage] = useState("");
+  const [popup,setPopup]=useState({
+    show:false,
+    id:null,
+  })
   const handleTitle = (e) => {
     e.preventDefault();
     setNoteTitle(e.target.value);
   };
   const handleBody = (e) => {
-    if (charLeft === 0) {
+    if (charLeft < 0 && message === "") {
       setMessage("Limit extended");
     } else {
       setMessage("");
+      e.preventDefault();
+      setNoteBody(e.target.value);
     }
-    e.preventDefault();
-    setNoteBody(e.target.value);
+   
   };
   const handleOpen = () => {
+    setNoteTitle("");
+    setNoteBody("");
+    setMessage("");
     setOpen(true);
   };
   const handleClose = () => {
@@ -46,13 +55,23 @@ function NotesMain() {
     ]);
     setNoteBody("");
     setNoteTitle("");
+    setMessage("");
     setOpen(false);
   };
 
   const handleDelete = (id) => {
-    const filteredNotes = notes.filter((note) => note.id !== id);
-    setNotes(filteredNotes);
+    setPopup({show:true,id})
   };
+  const handleDeleteTrue=()=>{
+if(popup.show && popup.id){
+  const filteredNotes = notes.filter((note) => note.id !== popup.id);
+  setNotes(filteredNotes);
+  setPopup({show:false,id:null});
+}
+  }
+  const handleDeleteFalse=()=>{
+setPopup({show:false,id:null});
+  }
   const charLimit = 100;
   const charLeft = charLimit - noteBody.length;
   return (
@@ -105,6 +124,7 @@ function NotesMain() {
           Add Note
         </Button>
         <Notes notes={notes} deleteHandler={handleDelete} />
+        {popup.show && (<Popup handleDeleteTrue={handleDeleteTrue} handleDeleteFalse={handleDeleteFalse} popup={popup}/>)}
       </div>
     </div>
   );
